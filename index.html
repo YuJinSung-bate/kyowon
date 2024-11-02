@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다-파라요 고객정보 수집</title>
+    <style>
+        /* 기본 스타일 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* 페이지 레이아웃 */
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* 폼 스타일 */
+        label {
+            display: block;
+            text-align: left;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .checkbox {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .checkbox input {
+            margin-right: 5px;
+        }
+
+        /* 버튼 스타일 */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* 푸터 스타일 */
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBPDkEMLSS2j_C8N4WyfLOn-5pUKqEhPnI",
+    authDomain: "kyowon-df628.firebaseapp.com",
+    projectId: "kyowon-df628",
+    storageBucket: "kyowon-df628.firebasestorage.app",
+    messagingSenderId: "390231037632",
+    appId: "1:390231037632:web:2b595220da206013b3ff25"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+    </script>
+
+    
+    <div class="container">
+        <header>
+            <h1>다-파라요</h1>
+            <p>소중한 정보를 남겨주세요. 간단한 정보 입력으로 다양한 혜택을 누리세요!</p>
+        </header>
+
+        <section class="form-section">
+            <form action="submit_form.php" method="POST">
+                <div>
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="name" placeholder="홍길동" required>
+                </div>
+                
+                <div>
+                    <label for="phone">전화번호</label>
+                    <input type="tel" id="phone" name="phone" placeholder="010-1234-5678" required>
+                </div>
+                
+                <div>
+                    <label for="location">사는 곳</label>
+                    <input type="text" id="location" name="location" placeholder="서울시 강남구" required>
+                </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="agreement" name="agreement" required>
+                    <label for="agreement">개인정보 수집 및 이용에 동의합니다.</label>
+                </div>
+
+                <button type="submit">정보 제출하기</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>고객센터: 1234-5678</p>
+            <p><a href="https://www.sns_link.com">SNS에서 팔로우하기</a></p>
+        </footer>
+    </div>
+</body>
+</html>
